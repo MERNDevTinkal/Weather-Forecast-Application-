@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- Facicon Link -->
+    <link rel="shortcut icon" href="./resources/favicon icon.jpeg" type="image/x-icon">
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="./src/input.css">
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Font - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CDN Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Main Section -->
+    <main class="block min-[850px]:flex">
+        <!-- Main Weather Section -->
+        <section class="min-w-fit p-4 shadow-lg min-[850px]:h-screen min-[850px]:fixed top-0 left-0 z-10 bg-white">
+            <!-- Search Section -->
+            <article class="flex">
+                <input type="text" placeholder="Enter City Name" autocomplete="false" class="location-input w-full min-[850px]:w-fit border border-slate-700 rounded-full mt-1 py-2 ps-3 pe-5">
+                <i class="location-search fa-solid fa-magnifying-glass cursor-pointer text-lg ms-2 bg-slate-800 text-white py-[10px] px-[15px] rounded-full mt-1"></i>
+                <i title="Search for Current Location" class="track-location fa-solid fa-location-crosshairs cursor-pointer text-lg ms-2 bg-slate-800 text-white py-[10px] px-[15px] mt-1 rounded-full"></i>
+            </article>
+
+            <!-- Main Weather Data Section -->
+            <article class="main-weather-section hidden mt-5">
+                <img  alt="Weather Icon" class="location-weather-image w-44 min-[500px]:w-64 my-10 mx-auto">
+                <article class="mt-5">
+                    <p class="location-name text-2xl font-semibold"></p>
+                    <article class="flex justify-between items-center mt-2 text-xl pe-4">
+                        <p class="location-temp"></p> <!-- 12°C -->
+                        <p class="location-date-time"></p>
+                    </article>
+                    <p class="location-weather-description max-w-[350px] pt-6 text-xl"></p>
+                </article>
+            </article>
+        </section>
+        <!-- Main Weather Section -->
+        
+        <!-- Other Weather Details Main Section -->
+        <section class="bg-slate-100 h-screen mt-10 min-[850px]:mt-0 flex-grow min-[850px]:ms-96 py-4 ps-4 min-[850px]:ps-8 pe-4 relative">
+            <!-- Find City... -->
+            <article class="no-city-entered flex min-h-screen justify-center items-center absolute top-0 left-5">
+                <p class="text-slate-400 text-6xl font-bold -mt-12">Start Entering City...</p>
+            </article>
+            <!-- Other Weather Details Section -->
+            <section>
+                <section class="flex flex-col h-full gap-y-3 min-[460px]:flex-row gap-x-3 min-[460px]:items-center">
+                    <!-- Extended Weather forecast Button -->
+                    <p class="hidden extended-forecast-heading w-full bg-slate-800 text-white rounded-md p-2 order-2 min-[460px]:-order-1">View Weather for next 5 days</p>
+                    <!-- Recent Search Dropdown Menu -->
+                    <section class="recent-search-dropdown-container group relative rounded-md hidden">
+                        <p class="recent-search-heading cursor-pointer w-full min-[460px]:w-max bg-slate-800 text-white rounded-md p-2 border-2 border-slate-700">Recent Searches</p>
+                        <!-- <option>Mumbai</option>
+                        <option>Delhi</option>
+                        <option>Kolkata</option>
+                        <option>Chennai</option>
+                        <option>Vishakapatnam</option> -->
+                        <section class="recent-search-dropdown hidden group-hover:block w-full absolute top-[44px] bg-slate-300 shadow-lg rounded-lg z-10">
+
+                        </section>
+                    </section>
+                </section>
+                <!-- Extented Weather for 5 days -->
+                <section class="extended-forecast-container mt-3 flex flex-wrap justify-start min-[850px]:justify-around gap-y-4 gap-x-4">
+                    <!-- Day Weather -->
+                    <!-- <article class="bg-white text-center w-fit p-3 rounded-xl shadow-lg">
+                        <p>Sun</p>
+                        <img src="../resources/cloudy.png" alt="Weather" class="w-36">
+                        <p>30°C</p>
+                    </article> -->
+                </section>
+            </section>
+            <!-- Today's Highlight -->
+            <section class="mt-10">
+                <h2 class="hidden other-weather-details-section-heading text-3xl font-semibold">Today's Highlight</h2>
+                <section class="other-weather-section flex-wrap mt-3 flex gap-x-5 gap-y-5">
+                    <!-- <article class="bg-white min-w-[200px] text-center w-fit p-3 rounded-xl shadow-lg">
+                        <h3 class="font-semibold text-lg">UV Index</h3>
+                        <p class="mt-3 text-lg">7</p>
+                    </article> -->
+                </section>
+            </section>
+            <!-- Other Weather Details Section -->
+        </section>
+        <!-- Other Weather Details Main Section -->
+    </main>
+    <!-- Main Section -->
+
+    <!-- External Script File -->
+    <script src="./src/app.js" defer></script>
+</body>
+</html>
